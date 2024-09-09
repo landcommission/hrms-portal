@@ -1,0 +1,331 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="NLC_HRMS_PORTAL.SiteMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">--%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <!-- Title here -->
+    <title>ESS-<%: Page.Title %>
+    </title>
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Your description" />
+    <meta name="keywords" content="Your,Keywords" />
+    <meta name="author" content="ResponsiveWebInc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts awesome -->
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <!--Top Menu-->
+    <!-- DataTables CSS -->
+    <%--<link rel="stylesheet" type="text/css" href="media/css/jquery.dataTables.css"/>--%>
+    <link rel="stylesheet" type="text/css" href="~/DataTable/CSS/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/DataTable/CSS/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/DataTable/CSS/responsive.bootstrap.min.css" />
+    <%-- <link href="css/Menu_Builder_Css.css" rel="stylesheet"/>--%>
+    <!-- Bootstrap CSS -->
+    <%--<link href="~/css/bootstrap.min.css" rel="stylesheet" />--%>
+    <!-- Animate css -->
+    <link href="~/css/animate.min.css" rel="stylesheet" />
+    <!-- Gritter -->
+    <link href="~/css/jquery.gritter.css" rel="stylesheet" />
+    <!-- Calendar -->
+    <link href="~/css/fullcalendar.css" rel="stylesheet" />
+    <!-- Bootstrap toggable -->
+    <link href="~/css/bootstrap-switch.css" rel="stylesheet" />
+    <!-- Date and Time picker -->
+    <link href="~/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <!-- Star rating -->
+    <link href="~/css/rateit.css" rel="stylesheet" />
+    <!-- Star rating -->
+    <link href="~/css/jquery.cleditor.css" rel="stylesheet" />
+    <!-- jQuery UI -->
+    <link href="~/css/jquery-ui.css" rel="stylesheet" />
+    <!-- prettyPhoto -->
+    <link href="~/css/prettyPhoto.css" rel="stylesheet" />
+    <!-- Font awesome CSS -->
+    <%-- <link href="~/css/font-awesome.min.css" rel="stylesheet" />--%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Custom CSS -->
+    <link href="~/css/custom.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/select2.min.css" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#" />
+    <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%--<asp:ToolkitScriptManager ID="toolkitScriptManager1" runat="server"></asp:ToolkitScriptManager> --%>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <h1>
+                                <a href="">
+                                    <img src="/Img/Logo.png" width="100" alt="logo" class="logo-default hidden-sm hidden-xs" />
+                                    <%--<img src="/Img/SK_Logo_1.png" width="200" alt="logo" class="logo-default hidden-sm hidden-xs" />--%>
+                                </a></h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2 style="text-align: center; color: #fff;">NATIONAL LAND COMMISSION<br />
+                            Self Service Portal</h2>
+                        <%-- <h2 style="text-align: center; color: #fff;">SPORTS KENYA - Self Service Portal</h2>--%>
+                    </div>
+                    <div class="col-md-4" id="divcollapse" runat="server">
+                        <div class="navbar navbar-inverse" role="banner">
+                            <div class="navbar-header">
+                                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                                    <span>Menu</span>
+                                </button>
+                            </div>
+                            <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome:
+                                            <label id="user" runat="server"></label>
+                                            <b class="caret"></b></a>
+                                        <ul class="dropdown-menu animated fadeInUp">
+                                            <li><a id="A1" href="/Change Password.aspx" runat="server" class="separator">Change Password</a></li>
+                                            <li><a runat="server" style="color: #a35050;" id="LogOutUser" onserverclick="LogOut" class="separator">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!----------------------END----------------------->
+                </div>
+            </div>
+        </div>
+        <!-- Logo & Navigation ends -->
+        <!-- Page content -->
+        <div class="page-content blocky">
+            <div class="container-fluid">
+                <div class="sidebar-dropdown">
+                    <a id="A3" href="#" runat="server" class="separator">MENU</a>
+                </div>
+                <friendlyUrls:ViewSwitcher runat="server" ID="viewSwitcher" />
+                <div class="sidey" style="display: block;">
+                    <div class="side-cont">
+                        <ul class="nav">
+                            <!-- Main menu -->
+                            <li id="Li1" class="current has_submenu" runat="server" style="background-color: #05AFF2"><a style="background-color: #05AFF2; color: #fff" href="#" id="A4" runat="server"
+                                class="separator"><i class="fa fa-home" style="font-size: 20px; color: #fff;"></i>Main Menu<span class="caret pull-right"></span></a>
+                                <ul class="subnav-menu" style="display: block;">
+                                    <li><a id="A59" href="~/EmployeeCard.aspx" runat="server" class="separator">My Employee Card</a></li>
+                                    <li><a id="A57" href="~/Leave.aspx" runat="server" class="separator">Leave</a></li>
+                                    <li><a id="A67" href="~/Payslip.aspx" runat="server" class="separator">My Payslip</a></li>
+                                    <li><a id="A64" href="~/P9.aspx" runat="server" class="separator">My P9 Report</a></li>
+                                    <li><a id="A60" href="~/Salary Advance.aspx" runat="server" class="separator">Salary Advance</a></li>
+                                    <li><a id="A2" href="~/Performance Management.aspx" runat="server" class="separator">Performance Management</a></li>
+                                    <li><a id="A8" href="~/Transport Requisition.aspx" runat="server" class="separator">Transport Requisition</a></li>
+                                    <li><a id="A5" href="~/Training Applications.aspx" runat="server" class="separator">Training and Development</a></li>
+                                    <li><a id="A6" href="~/TrainingBackToOffice.aspx" runat="server" class="separator">Training-Back To Office Report</a></li>
+                                    <li><a id="A7" href="~/Separation.aspx" runat="server" class="separator">Employee Separation</a></li>
+                                    <li><a id="A9" href="~/Clearance.aspx" runat="server" class="separator">Employee Clearance</a></li>
+                                    <li><a id="A10" href="~/ExitInterview.aspx" runat="server" class="separator">Exit Interview</a></li>
+                                    <li><a id="A11" visible="false" href="~/Online Users.aspx" runat="server" class="separator">Online Users</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mainy" style="margin-left: 245px;">
+                    <div class="row" id="">
+                        <div class="col-lg-12" id="loadingDiv" runat="server" style="display: none">
+                            <center>
+                                <img alt="loading data" src="/Img/loader.gif" />
+                            </center>
+                        </div>
+                    </div>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <!-- Admin hero. Preity bar plugin used -->
+                    <div class="clearfix">
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+        <!-- Footer starts -->
+        <%--<footer>
+            <div class="container-fluid">
+                <div class="copy text-center">
+                    © <% string dt = DateTime.Now.Year.ToString(); %> <%= dt %> National Land Commission - All Rights Reserved. - info@landcommission.go.ke<br />
+                    designed by <a href="https://greencom.co.ke/" target="_blank">Greencom Enterprise Solutions Limited</a>
+                </div>
+            </div>
+        </footer>--%>
+        <!-- Footer ends -->
+        <!-- Scroll to top -->
+        <span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span>
+        <!-- Javascript files -->
+        <!--Datatables-->
+        <script type="text/javascript" charset="utf8" src="<%= Page.ResolveUrl("~/DataTable/JS/jquery-1.11.3.min.js")%>"></script>
+        <script type="text/javascript" charset="utf8" src="<%= Page.ResolveUrl("~/DataTable/JS/jquery.dataTables.min.js")%>"></script>
+        <script type="text/javascript" charset="utf8" src="<%= Page.ResolveUrl("~/DataTable/JS/dataTables.bootstrap.min.js")%>"></script>
+        <script type="text/javascript" charset="utf8" src="<%= Page.ResolveUrl("~/DataTable/JS/dataTables.responsive.min.js")%>"></script>
+        <!-- jQuery -->
+        <%--   <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.js")%>"></script>--%>
+        <!-- Bootstrap JS -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/bs.pagination.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/bootstrap.min.js")%>"></script>
+        <!-- jQuery UI -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery-ui-1.10.2.custom.min.js")%>"></script>
+        <!-- jQuery Peity -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/peity.js")%>"></script>
+        <!-- Calendar -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/fullcalendar.min.js")%>"></script>
+        <!-- jQuery Star rating -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.rateit.min.js")%>"></script>
+        <!-- prettyPhoto -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.prettyPhoto.js")%>"></script>
+        <!-- jQuery flot -->
+        <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.flot.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.flot.pie.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.flot.stack.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.flot.resize.js")%>"></script>
+        <!-- Gritter plugin -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.gritter.min.js")%>"></script>
+        <!-- CLEditor -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.cleditor.min.js")%>"></script>
+        <!-- Date and Time picker -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/plugins/jquery-ui/jquery.ui.datepicker.min.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/bootstrap-datetimepicker.min.js")%>"></script>
+        <!-- jQuery Toggable -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/bootstrap-switch.min.js")%>"></script>
+        <!-- Respond JS for IE8 -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/respond.min.js")%>"></script>
+        <!-- HTML5 Support for IE -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/html5shiv.js")%>"></script>
+        <!-- Custom JS -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/custom.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/Scripts/select2.min.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/sweetalert.min.js")%>"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('.btn').dblclick(false);
+                $('[id*=loadingDiv]').hide();
+                $('#datetimepicker2').datepicker({
+                    language: 'en',
+                    pick12HourFormat: true
+                });
+                for (var i = 8; i < 20; i++) {
+                    $('#datetimepicker' + i).datetimepicker({
+                        pickTime: false,
+                        format: 'yyyy-MM-dd'
+
+                    });
+                }
+            });
+        </script>
+        <!-- Javascript for graph -->
+        <script type="text/javascript">
+
+            $(function () {
+                //alert('<%=Session["BrowserName"] %>');
+
+                //jQuery.ajaxSetup({
+                //    beforeSend: function () {
+                //        $('[id*=loadingDiv]').show();
+                //    },
+                //    complete: function () {
+                //        $('[id*=loadingDiv]').hide();
+                //    },
+                //    success: function () { }
+                //});
+                if (window.matchMedia("(max-width: 767px)").matches == true) {
+                    $("#MainContent_TabContainer1").css("width", "max-content");
+                } else {
+                    $('.tabs').removeAttr('style');
+                }
+                //Logout users after specified time of Idling
+                const idleDurationSecs = 60000 * 60;    // X number of seconds in this case 5 minutes
+                const redirectUrl = '/Default.aspx';  // Redirect idle users to this URL
+                let idleTimeout; // variable to hold the timeout, do not modify
+
+                const resetIdleTimeout = function () {
+
+                    // Clears the existing timeout
+                    if (idleTimeout) clearTimeout(idleTimeout);
+
+                    // Set a new idle timeout to load the redirectUrl after idleDurationSecs
+                    idleTimeout = setTimeout(() => location.href = redirectUrl, idleDurationSecs);
+                };
+                // Init on page load
+                resetIdleTimeout();
+
+                // Reset the idle timeout on any of the events listed below
+                ['click', 'touchstart', 'mousemove'].forEach(evt =>
+                    document.addEventListener(evt, resetIdleTimeout, false)
+                );
+
+
+                /* Bar Chart starts */
+
+                var d1 = [];
+                for (var i = 0; i <= 35; i += 1)
+                    d1.push([i, parseInt(Math.random() * 30)]);
+
+                var d2 = [];
+                for (var i = 0; i <= 35; i += 1)
+                    d2.push([i, parseInt(Math.random() * 30)]);
+
+
+                var stack = 0, bars = true, lines = false, steps = false;
+
+                function plotWithOptions() {
+                    $.plot($("#home"), [d1, d2], {
+                        series: {
+                            stack: stack,
+                            lines: { show: lines, fill: true, steps: steps },
+                            bars: { show: bars, barWidth: 0.8 }
+                        },
+                        grid: {
+                            borderWidth: 0, hoverable: true, color: "#777"
+                        },
+                        colors: ["#16cbe6", "#0fa6bc"],
+                        bars: {
+                            show: true,
+                            lineWidth: 0,
+                            fill: true,
+                            fillColor: { colors: [{ opacity: 0.9 }, { opacity: 0.8 }] }
+                        }
+                    });
+                }
+
+                plotWithOptions();
+
+                $(".stackControls input").click(function (e) {
+                    e.preventDefault();
+                    stack = $(this).val() == "With stacking" ? true : null;
+                    plotWithOptions();
+                });
+                $(".graphControls input").click(function (e) {
+                    e.preventDefault();
+                    bars = $(this).val().indexOf("Bars") != -1;
+                    lines = $(this).val().indexOf("Lines") != -1;
+                    steps = $(this).val().indexOf("steps") != -1;
+                    plotWithOptions();
+                });
+
+                /* Bar chart ends */
+
+            });
+
+        </script>
+    </form>
+</body>
+</html>
+

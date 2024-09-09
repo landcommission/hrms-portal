@@ -1,0 +1,234 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Popup.master.cs" Inherits="NLC_HRMS_PORTAL.Popup" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">--%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Your description" />
+    <meta name="keywords" content="Your,Keywords" />
+    <meta name="author" content="ResponsiveWebInc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts awesome -->
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <!--Top Menu-->
+    <!-- DataTables CSS -->
+    <%--<link rel="stylesheet" type="text/css" href="media/css/jquery.dataTables.css"/>--%>
+    <link rel="stylesheet" type="text/css" href="~/DataTable/CSS/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/DataTable/CSS/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/DataTable/CSS/responsive.bootstrap.min.css" />
+    <%-- <link href="css/Menu_Builder_Css.css" rel="stylesheet"/>--%>
+    <!-- Bootstrap CSS -->
+    <%--<link href="~/css/bootstrap.min.css" rel="stylesheet" />--%>
+    <!-- Animate css -->
+    <link href="~/css/animate.min.css" rel="stylesheet" />
+    <!-- Gritter -->
+    <link href="~/css/jquery.gritter.css" rel="stylesheet" />
+    <!-- Calendar -->
+    <link href="~/css/fullcalendar.css" rel="stylesheet" />
+    <!-- Bootstrap toggable -->
+    <link href="~/css/bootstrap-switch.css" rel="stylesheet" />
+    <!-- Date and Time picker -->
+    <link href="~/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <!-- Star rating -->
+    <link href="~/css/rateit.css" rel="stylesheet" />
+    <!-- Star rating -->
+    <link href="~/css/jquery.cleditor.css" rel="stylesheet" />
+    <!-- jQuery UI -->
+    <link href="~/css/jquery-ui.css" rel="stylesheet" />
+    <!-- prettyPhoto -->
+    <link href="~/css/prettyPhoto.css" rel="stylesheet" />
+    <!-- Font awesome CSS -->
+    <%-- <link href="~/css/font-awesome.min.css" rel="stylesheet" />--%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Custom CSS -->
+    <link href="~/css/custom.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/select2.min.css" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#" />
+    <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <!-- Page content -->
+        <div class="page-content blocky">
+            <div class="container-fluid">
+                <div class="mainy">
+                    <div class="row" id="">
+                        <div class="col-lg-12" id="loadingDiv" runat="server">
+                            <center>
+                                <img alt="loading data" src="/Img/loader.gif" />
+                            </center>
+                        </div>
+                    </div>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <!-- Admin hero. Preity bar plugin used -->
+                    <div class="clearfix">
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+        <!-- Javascript files -->
+        <!--Datatables-->
+        <script type="text/javascript" charset="utf8" src="<%= Page.ResolveUrl("~/DataTable/JS/jquery-1.11.3.min.js")%>"></script>
+        <script type="text/javascript" charset="utf8" src="<%= Page.ResolveUrl("~/DataTable/JS/jquery.dataTables.min.js")%>"></script>
+        <script type="text/javascript" charset="utf8" src="<%= Page.ResolveUrl("~/DataTable/JS/dataTables.bootstrap.min.js")%>"></script>
+        <script type="text/javascript" charset="utf8" src="<%= Page.ResolveUrl("~/DataTable/JS/dataTables.responsive.min.js")%>"></script>
+        <!-- jQuery -->
+        <%--   <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.js")%>"></script>--%>
+        <!-- Bootstrap JS -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/bs.pagination.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/bootstrap.min.js")%>"></script>
+        <!-- jQuery UI -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery-ui-1.10.2.custom.min.js")%>"></script>
+        <!-- jQuery Peity -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/peity.js")%>"></script>
+        <!-- Calendar -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/fullcalendar.min.js")%>"></script>
+        <!-- jQuery Star rating -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.rateit.min.js")%>"></script>
+        <!-- prettyPhoto -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.prettyPhoto.js")%>"></script>
+        <!-- jQuery flot -->
+        <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.flot.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.flot.pie.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.flot.stack.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.flot.resize.js")%>"></script>
+        <!-- Gritter plugin -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.gritter.min.js")%>"></script>
+        <!-- CLEditor -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/jquery.cleditor.min.js")%>"></script>
+        <!-- Date and Time picker -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/plugins/jquery-ui/jquery.ui.datepicker.min.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/bootstrap-datetimepicker.min.js")%>"></script>
+        <!-- jQuery Toggable -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/bootstrap-switch.min.js")%>"></script>
+        <!-- Respond JS for IE8 -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/respond.min.js")%>"></script>
+        <!-- HTML5 Support for IE -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/html5shiv.js")%>"></script>
+        <!-- Custom JS -->
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/custom.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/Scripts/select2.min.js")%>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/js/sweetalert.min.js")%>"></script>
+        <script type="text/javascript">
+            $(function () {
+
+                $('#datetimepicker2').datepicker({
+                    language: 'en',
+                    pick12HourFormat: true
+                });
+                for (var i = 8; i < 20; i++) {
+                    $('#datetimepicker' + i).datetimepicker({
+                        pickTime: false,
+                        format: 'yyyy-MM-dd'
+
+                    });
+                }
+            });
+        </script>
+        <!-- Javascript for graph -->
+        <script type="text/javascript">
+
+            $(function () {
+                //alert('<%=Session["BrowserName"] %>');
+                $('[id*=loadingDiv]').hide();
+                jQuery.ajaxSetup({
+                    beforeSend: function () {
+                        $('[id*=loadingDiv]').show();
+                    },
+                    complete: function () {
+                        $('[id*=loadingDiv]').hide();
+                    },
+                    success: function () { }
+                });
+                //Logout users after specified time of Idling
+                const idleDurationSecs = 60000 * 60;    // X number of seconds in this case 5 minutes
+                const redirectUrl = '/Default.aspx';  // Redirect idle users to this URL
+                let idleTimeout; // variable to hold the timeout, do not modify
+
+                const resetIdleTimeout = function () {
+
+                    // Clears the existing timeout
+                    if (idleTimeout) clearTimeout(idleTimeout);
+
+                    // Set a new idle timeout to load the redirectUrl after idleDurationSecs
+                    idleTimeout = setTimeout(() => location.href = redirectUrl, idleDurationSecs);
+                };
+                // Init on page load
+                resetIdleTimeout();
+
+                // Reset the idle timeout on any of the events listed below
+                ['click', 'touchstart', 'mousemove'].forEach(evt =>
+                    document.addEventListener(evt, resetIdleTimeout, false)
+                );
+
+
+                /* Bar Chart starts */
+
+                var d1 = [];
+                for (var i = 0; i <= 35; i += 1)
+                    d1.push([i, parseInt(Math.random() * 30)]);
+
+                var d2 = [];
+                for (var i = 0; i <= 35; i += 1)
+                    d2.push([i, parseInt(Math.random() * 30)]);
+
+
+                var stack = 0, bars = true, lines = false, steps = false;
+
+                function plotWithOptions() {
+                    $.plot($("#home"), [d1, d2], {
+                        series: {
+                            stack: stack,
+                            lines: { show: lines, fill: true, steps: steps },
+                            bars: { show: bars, barWidth: 0.8 }
+                        },
+                        grid: {
+                            borderWidth: 0, hoverable: true, color: "#777"
+                        },
+                        colors: ["#16cbe6", "#0fa6bc"],
+                        bars: {
+                            show: true,
+                            lineWidth: 0,
+                            fill: true,
+                            fillColor: { colors: [{ opacity: 0.9 }, { opacity: 0.8 }] }
+                        }
+                    });
+                }
+
+                plotWithOptions();
+
+                $(".stackControls input").click(function (e) {
+                    e.preventDefault();
+                    stack = $(this).val() == "With stacking" ? true : null;
+                    plotWithOptions();
+                });
+                $(".graphControls input").click(function (e) {
+                    e.preventDefault();
+                    bars = $(this).val().indexOf("Bars") != -1;
+                    lines = $(this).val().indexOf("Lines") != -1;
+                    steps = $(this).val().indexOf("steps") != -1;
+                    plotWithOptions();
+                });
+
+                /* Bar chart ends */
+
+            });
+
+        </script>
+    </form>
+</body>
+</html>

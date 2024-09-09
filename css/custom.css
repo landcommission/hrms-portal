@@ -1,0 +1,283 @@
+﻿/*margins*/
+.m-t-21 {
+    margin-top: 21px;
+}
+
+.m-t-22 {
+    margin-top: 22px;
+}
+
+.m-t-23 {
+    margin-top: 23px;
+}
+
+.button-next-prev {
+    outline: none !important;
+    border-color: #e2e7eb;
+    color: #242a30;
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.button-next {
+    float: right;
+}
+
+.button-back {
+    float: left;
+}
+
+/*padding*/
+.p-m-info{
+    padding: 20px 20px 0px 20px;
+}
+
+/*panel*/
+.dpanel {
+    margin: 0 -20px;
+    overflow: visible;
+    border-bottom: 1px solid #f0f3f4;
+}
+
+.spanel {
+    margin: 0 -20px;
+    overflow: visible;
+}
+
+/*button designs*/
+.invisibleTb {
+    background: transparent !important;
+    border: none !important;
+}
+
+#invisibleTb:active {
+    background: white !important;
+    border: 5px solid red !important;
+}
+
+.a-r {
+    text-align: right;
+}
+
+.a-l {
+    text-align: left;
+}
+
+/*unbordered inputs*/
+.noborder{
+    border: none !important;
+}
+
+/*unresizable text-boxes*/
+.unresize {
+    resize: none;
+}
+
+/*custom textboxes designs*/
+.ctextboxes {
+    border: 1px solid #ccd0d4 !important;
+    border-radius: 3px !important;
+    outline: none !important;
+    padding: 3px;
+}
+
+/*designing the multidropdowns*/
+.mddbox{
+    border-color: #ccd0d4;
+    border: 1px solid #ccd0d4;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 12px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+
+    display: block;
+  width: 100% !important;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+
+    height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.mddbox:focus {
+    border-color: #9fa2a5;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.mddbutton{
+    height: 30px;
+      width: 30px !important;
+  background-color: black;
+}
+
+.mdddropd{
+     background-color: grey;
+}
+
+.mddtooltip{
+
+}
+
+/*designing the .net grids - Pagination*/
+.pagination-ys {
+    /*display: inline-block;*/
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+    .pagination-ys table > tbody > tr > td {
+        -webkit-border-radius: 3px !important;
+        text-align: -webkit-match-parent;
+    }
+
+        .pagination-ys table > tbody > tr > td > a,
+        .pagination-ys table > tbody > tr > td > span {
+            margin-left: 5px;
+            -webkit-border-radius: 3px !important;
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            -webkit-transition: color 100ms ease-in-out;
+        }
+
+        .pagination-ys table > tbody > tr > td > span {
+            margin-left: 5px;
+            background: #242a30 !important;
+            border-color: #242a30 !important;
+            z-index: 2;
+            color: #fff;
+            cursor: default;
+        }
+
+        .pagination-ys table > tbody > tr > td:first-child > a,
+        .pagination-ys table > tbody > tr > td:first-child > span {
+            -webkit-border-radius: 3px !important;
+        }
+
+        .pagination-ys table > tbody > tr > td:last-child > a,
+        .pagination-ys table > tbody > tr > td:last-child > span {
+            -webkit-border-radius: 3px !important;
+        }
+
+        .pagination-ys table > tbody > tr > td > a:hover,
+        .pagination-ys table > tbody > tr > td > span:hover,
+        .pagination-ys table > tbody > tr > td > a:focus,
+        .pagination-ys table > tbody > tr > td > span:focus {
+            background-color: #eeeeee;
+        }
+
+/*designing the .net tabs*/
+
+.MyTabStyle .ajax__tab_header {
+    border-top: 1px solid #ddd !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    /*background: #E93146;*/
+     background: #05aff2;
+    border-radius: 5px 5px 0 0;
+    border: none !important;
+    border-bottom: 1px solid #ddd;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    border-top: 1px solid #ddd !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    color: #fff;
+    font-size: 11px;
+}
+
+    .MyTabStyle .ajax__tab_header .ajax__tab_outer {
+        margin-bottom: 0;
+        line-height: 20px;
+        border-radius: 4px 4px 0 0;
+        margin-right: 5px;
+    }
+
+    .MyTabStyle .ajax__tab_header .ajax__tab_inner {
+        line-height: 20px;
+        padding: 5px 5px;
+    }
+
+        .MyTabStyle .ajax__tab_header .ajax__tab_inner a {
+            color: #6e7179;
+            position: relative;
+            display: block;
+            -webkit-transition: color 100ms ease-in-out;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+.MyTabStyle .ajax__tab_hover .ajax__tab_outer {
+    cursor: auto;
+    color: #333;
+    background: #fafafa;
+}
+
+.MyTabStyle .ajax__tab_hover .ajax__tab_inner {
+    cursor: auto;
+}
+
+
+.MyTabStyle .ajax__tab_active .ajax__tab_outer {
+    border: none !important;
+    background-color: #fff;
+    color: #242a30;
+    cursor: default;
+}
+
+.MyTabStyle .ajax__tab_active .ajax__tab_inner {
+}
+
+    .MyTabStyle .ajax__tab_active .ajax__tab_inner a {
+        cursor: default;
+    }
+
+.MyTabStyle .ajax__tab_body {
+}
+
+.tabs-bar {
+    border-top: 1px solid #ddd !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+.tab-container {
+}
+
+.tab-container-tabs {
+    border: none !important;
+    cursor: auto;
+}
+
+.tab-container-tabs-links {
+    margin-right: 5px;
+    line-height: 20px;
+    color: #6e7179;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    -webkit-transition: color 100ms ease-in-out;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: auto;
+}
+
+.tab-container .tab-container-tabs .active {
+    color: #242a30;
+}
